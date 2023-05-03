@@ -12,7 +12,7 @@ interface Props {
 }
 
 const SearchInput = ({ onSearch }: Props) => {
-  const ref = useRef<HTMLInputElement>(null);
+  const ref = useRef<HTMLInputElement>(null); //ref to the search input
   return (
     <form
       onSubmit={(event) => {
