@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import ms from "ms";
 import APIClient, { FetchResponse } from "../services/api-client";
 import genres from "../data/genres";
 
@@ -16,7 +17,7 @@ const useGenres = () =>
   useQuery<FetchResponse<Genre>, Error>({
     queryKey: ["genres"],
     queryFn: apiClient.getAll,
-    staleTime: 24 * 60 * 60 * 1000, // 24 hrs
+    staleTime: ms("24h"),
     initialData: genres, //this data is inserted into the cache
   });
 
