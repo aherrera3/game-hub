@@ -1,4 +1,4 @@
-//hook for separating corcern: HTTP requests
+//hook for separating concerns: HTTP requests
 
 import { useInfiniteQuery } from "@tanstack/react-query";
 import ms from "ms";
