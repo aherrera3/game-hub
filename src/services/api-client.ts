@@ -20,9 +20,17 @@ class APIClient<T> {
     this.endpoint = endpoint;
   }
 
+  // gets an array of object from the api
   getAll = (config: AxiosRequestConfig) => {
     return axiosInstance
       .get<FetchResponse<T>>(this.endpoint, config)
+      .then((response) => response.data);
+  };
+
+  // gets a single of object from the api
+  get = (id: number | string) => {
+    return axiosInstance
+      .get<T>(this.endpoint + "/" + id)
       .then((response) => response.data);
   };
 }
