@@ -18,10 +18,6 @@ const GameScreenshots = ({ gameId }: Props) => {
       ))}
     </SimpleGrid>
   );
-
-  // return first ? (
-  //   <video src={first.data[480]} poster={first.preview} controls />
-  // ) : null;
 };
 
 export default GameScreenshots;
