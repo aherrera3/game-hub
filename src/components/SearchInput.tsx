@@ -1,7 +1,7 @@
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { useRef } from "react";
 import { BsSearch } from "react-icons/bs";
-import useGameQueryStore from "../gameQuery/store";
+import useGameQueryStore from "../store";
 import { useNavigate } from "react-router-dom";
 
 const SearchInput = () => {
@@ -13,10 +13,7 @@ const SearchInput = () => {
     <form
       onSubmit={(event) => {
         event.preventDefault(); // to prevent the form to be posted to the server
-        if (ref.current) {
-          setSearchText(ref.current.value);
-          navigate("/");
-        }
+        navigate("/");
       }}
     >
       <InputGroup>
@@ -29,6 +26,7 @@ const SearchInput = () => {
           borderRadius={20}
           placeholder="Search games.."
           variant="filled"
+          onChange={(event) => setSearchText(event.target.value)}
         />
       </InputGroup>
     </form>
